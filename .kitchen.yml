@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: chef/centos-6.5
+    driver:
+      box: chef/centos-6.5
+      provider: vmware_fusion
+suites:
+  - name: default
+    run_list:
+      - recipe[home_db::default]
+    attributes:
